@@ -18,3 +18,12 @@ Feature: Add Element button
             |1     |
             |10    |
             |99    |
+
+    Scenario Outline: Delete button action
+        Given Add Element page loaded and <number> of delete buttons visible
+        When Any delete button clicked <number_click> of times
+        Then <number_rem> of delete buttons remains
+            Examples:
+            |number|number_click|number_rem|
+            |10    |10          |0         |
+            |10    |8           |2         |
